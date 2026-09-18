@@ -58,5 +58,6 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <gotoRelatedProvider implementation="dev.hafez.nestswitch.NestGotoRelatedProvider"/>
+        <notificationGroup id="Nest Switch" displayType="BALLOON"/>
     </extensions>
 </idea-plugin>

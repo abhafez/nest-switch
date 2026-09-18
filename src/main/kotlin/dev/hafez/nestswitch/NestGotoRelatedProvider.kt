@@ -23,6 +23,7 @@ class NestGotoRelatedProvider : GotoRelatedProvider() {
         val file = psiElement.containingFile ?: return mutableListOf()
         val vFile = file.virtualFile ?: return mutableListOf()
         if (!NestProjectDetector.isNestProject(vFile)) return mutableListOf()
+        if (!NestLicenseGate.isLicensed(file.project)) return mutableListOf()
 
         val psiManager = PsiManager.getInstance(file.project)
         val moduleRoot = NestModuleScanner.findModuleRoot(vFile)
