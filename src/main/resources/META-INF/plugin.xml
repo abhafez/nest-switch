@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>dev.hafez.nestswitch</id>
     <name>Nest Switch</name>
-    <vendor email="abdurrahman.hafez@gmail.com" url="https://github.com/hafez">Hafez</vendor>
+    <vendor email="abdurrahman.hafez@gmail.com" url="https://github.com/abhafez">Abdurrahman Hafez</vendor>
 
     <description><![CDATA[
         <p>
