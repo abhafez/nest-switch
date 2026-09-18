@@ -4,12 +4,50 @@
     <vendor email="abdurrahman.hafez@gmail.com" url="https://github.com/hafez">Hafez</vendor>
 
     <description><![CDATA[
-        Adds <b>every file of the current NestJS module</b> — controllers, services,
-        providers, DTOs, entities, guards, pipes, specs, and anything sitting in
-        <code>dto/</code>, <code>entities/</code> and friends — to Navigate &gt; Related
-        Symbol (Ctrl+Alt+Home), grouped by role. The module is the nearest folder that
-        declares a <code>*.module.ts</code>; nested modules stay out of the list.
-        No icons, no editor decorations — only active in projects that depend on @nestjs/*.
+        <p>
+            Jumping around a NestJS module means hunting through the project tree: the controller
+            is next to the service, but the DTOs are in <code>dto/</code>, the entity is in
+            <code>entities/</code>, and the spec is wherever it landed. <b>Nest Switch</b> puts the
+            whole module one keystroke away.
+        </p>
+
+        <p>
+            Press <b>Ctrl+Alt+Home</b> (<b>&#8963;&#8984;&#8593;</b> on macOS), or
+            <em>Navigate &rarr; Related Symbol&hellip;</em>, from any file in a Nest module, and the
+            standard platform popup lists <b>every file of that module</b>, grouped by role. Type to
+            filter, <b>Enter</b> to open, <b>Shift+Enter</b> to open in a split.
+        </p>
+
+        <h3>What counts as "the module"</h3>
+        <p>
+            The nearest folder above the current file that declares a <code>*.module.ts</code>. Every
+            <code>.ts</code>/<code>.tsx</code>/<code>.js</code>/<code>.jsx</code> file beneath it is
+            listed &mdash; sub-folders included &mdash; so <code>dto/create-user.dto.ts</code> and
+            <code>entities/user.entity.ts</code> show up alongside the controller and service.
+            Nested modules keep their own scope: a sub-folder with its own <code>*.module.ts</code>
+            is left out, so a parent module never swallows its children.
+        </p>
+
+        <h3>Grouped by role, not dumped in a list</h3>
+        <p>
+            Items are sorted into sections &mdash; Module, Controllers, Services, Resolvers,
+            Gateways, Providers, Repositories, Entities, Schemas, DTOs, Interfaces, Guards,
+            Strategies, Interceptors, Pipes, Middleware, Filters, Decorators, Mappers, Listeners,
+            Tasks, Events, Tests, and more. The role comes from the file name
+            (<code>create-user.dto.ts</code> &rarr; DTOs); when the name carries no role, the
+            sub-folder names the section (<code>entities/</code> &rarr; Entities). Files in
+            sub-folders are labelled with their path, so <code>dto/create-user.dto.ts</code> is never
+            ambiguous.
+        </p>
+
+        <h3>Quiet by design</h3>
+        <ul>
+            <li><b>No icons, no gutter markers, no inlay hints</b> &mdash; nothing is added to your editor.</li>
+            <li><b>Inert outside Nest</b> &mdash; silent unless the project actually depends on <code>@nestjs/*</code>.</li>
+            <li><b>Nothing to configure</b> &mdash; no settings page, no setup.</li>
+            <li><b>Every JetBrains IDE, 2023.3+</b> &mdash; core platform APIs only, so Community editions
+                work too, with no dependency on the JavaScript/TypeScript plugin.</li>
+        </ul>
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
