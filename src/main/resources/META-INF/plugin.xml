@@ -1,0 +1,20 @@
+<idea-plugin>
+    <id>dev.hafez.nestswitch</id>
+    <name>Nest Switch</name>
+    <vendor email="abdurrahman.hafez@gmail.com" url="https://github.com/hafez">Hafez</vendor>
+
+    <description><![CDATA[
+        Adds <b>every file of the current NestJS module</b> — controllers, services,
+        providers, DTOs, entities, guards, pipes, specs, and anything sitting in
+        <code>dto/</code>, <code>entities/</code> and friends — to Navigate &gt; Related
+        Symbol (Ctrl+Alt+Home), grouped by role. The module is the nearest folder that
+        declares a <code>*.module.ts</code>; nested modules stay out of the list.
+        No icons, no editor decorations — only active in projects that depend on @nestjs/*.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <gotoRelatedProvider implementation="dev.hafez.nestswitch.NestGotoRelatedProvider"/>
+    </extensions>
+</idea-plugin>
