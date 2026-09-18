@@ -50,6 +50,10 @@
         </ul>
     ]]></description>
 
+    <!-- Paid plugin: code is the JetBrains Sales System Product Code; release-date/
+         release-version pin the major release and must stay fixed across minor updates. -->
+    <product-descriptor code="PNESTSWITCH" release-date="20260918" release-version="20261"/>
+
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
