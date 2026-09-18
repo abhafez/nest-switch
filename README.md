@@ -9,7 +9,31 @@ component's files.
 Deliberately has **no icons and no editor decorations** — the shortcut is the
 whole feature.
 
-## How it groups files (v0.7)
+## What it looks like
+
+Caret is inside `posts.service.spec.ts`; one `Ctrl+Alt+Home` lists the whole
+`posts/` module, grouped by role:
+
+![Related Symbol popup listing every file of the posts module](docs/related-symbol-popup.png)
+
+Note what the popup shows: the controller, both DTOs from `dto/`, the entity from
+`entities/`, the module, the service, and the sibling spec — each under its own
+section header, sub-folder files prefixed with their path. The `Other` entry at the
+bottom is the platform's own symbol-level result (the `PostsService` class), which
+sits alongside the file list.
+
+## Usage
+
+1. Open any file inside a Nest module.
+2. Press `Ctrl+Alt+Home` (Linux/Windows) or `⌃⌘↑` (macOS) — or use
+   *Navigate → Related Symbol…*.
+3. Type to filter, `Enter` to open. The popup is the standard platform one, so
+   `Shift+Enter` opens in a split and arrow keys navigate.
+
+Nothing to configure, no settings page. The plugin stays silent in projects with no
+`@nestjs/*` dependency, so it never adds noise to non-Nest code.
+
+## How it groups files (v1.0)
 
 Scope is the **module folder**, not the file name. From the current file the plugin
 walks up to the nearest directory holding a `*.module.ts` — that's the module root —
